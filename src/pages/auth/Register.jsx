@@ -17,11 +17,10 @@ export default function Register() {
         setLoading(true);
         setError('');
         
-        // Llamar al servicio de registro (email, password, displayName)
         const result = await registerUser(data.email, data.password, data.name);
         
         if (result.success) {
-            // Guardar usuario en el store de Zustand y redirigir
+            // Guardar usuario en Zustand y redirigir
             setUser(result.user);
             navigate('/dashboard');
         } else {
@@ -47,7 +46,7 @@ export default function Register() {
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                     
-                    {/* Campo de mombre completo */}
+                    {/* Campo de mombre */}
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                             Nombre completo

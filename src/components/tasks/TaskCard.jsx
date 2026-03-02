@@ -11,7 +11,7 @@ export default function TaskCard({ task }) {
 
     //Manejar toggle de completado
     const handleToggleComplete = async (e) => {
-        e.preventDefault(); //Evitar que el link navegue
+        e.preventDefault();
 
         const result = await updateTask(task.id, {
             completed: !task.completed

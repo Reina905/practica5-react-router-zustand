@@ -15,10 +15,13 @@ export default function Dashboard() {
     // Hook que se suscribe a las tareas en tiempo real
     useTasks();
 
-    // Aplicar filtros seleccionados
+    // Aplicar filtros a las tareas
     const filteredTasks = tasks.filter((task) => {
+        // Filtro por estado (completadas/pendientes)
         if (currentFilter === 'completed' && !task.completed) return false;
         if (currentFilter === 'pending' && task.completed) return false;
+        
+        // Filtro por categoría
         if (currentCategory !== 'all' && task.category !== currentCategory) return false;
         
         if (searchQuery.trim() !== '') {

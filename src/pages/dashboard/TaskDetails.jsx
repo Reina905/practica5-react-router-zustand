@@ -76,7 +76,7 @@ export default function TaskDetails() {
     const priority = PRIORITIES.find(p => p.id === task.priority);
 
 
-    // Clases según tema
+    // Clases segun tema
     const bgCard = theme === 'dark' ? 'bg-gray-800 text-gray-100 border-gray-700' : 'bg-white text-gray-900 border-gray-200';
     const textPrimary = theme === 'dark' ? 'text-gray-100' : 'text-gray-800';
     const textSecondary = theme === 'dark' ? 'text-gray-300' : 'text-gray-600';
@@ -97,7 +97,7 @@ export default function TaskDetails() {
                 </Link>
             </div>
 
-            <div className={`card p-6 rounded-lg shadow-md border ${bgCard}`}>
+            <div className={`card ${bgCard}`}>
                 {/* Header con título y botones */}
                 <div className="flex justify-between items-start mb-6">
                     <div className="flex-1">
@@ -132,13 +132,13 @@ export default function TaskDetails() {
                     <div className="flex gap-2">
                         <button
                             onClick={() => setEditing(true)}
-                            className={`px-4 py-2 rounded-lg font-medium ${btnSecondary}`}
+                            className={`btn-secondary ${btnSecondary}`}
                         >
                             Editar
                         </button>
                         <button
                             onClick={handleDelete}
-                            className={`px-4 py-2 rounded-lg font-medium ${btnDanger}`}
+                            className={`btn-danger ${btnDanger}`}
                         >
                             Eliminar
                         </button>
